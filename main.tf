@@ -12,11 +12,20 @@ provider "aws" {
 #}
 
 #Deploy VPC
-module "vpc_demo" {
-  source = "./network"
-  cidr = "192.168.0.0/16"
-  private_cidr = "192.168.1.0/24"
-  public_cidr  = "192.168.2.0/24"
+#module "vpc_demo" {
+ # source = "./network"
+ # cidr = "192.168.0.0/16"
+ # private_cidr = "192.168.1.0/24"
+ # public_cidr  = "192.168.2.0/24"
+#}
+
+resource "aws_vpc" "first_vpc" {
+  cidr_block       = "16.0.0.0/16"
+  instance_tenancy = "default"
+
+  tags = {
+    Name = "first_vpc"
+  }
 }
 
 #deploy SG
