@@ -41,4 +41,3 @@ resource "aws_vpc" "first_vpc" {
  # security_groups = "${module.sg_aws.name}"
 #}
 
-~
