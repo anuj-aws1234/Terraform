@@ -6,10 +6,10 @@ provider "aws" {
 
 # Deploy storage
 
-module "storage" {
-  source = "./s3_storage"
-  project_name = "demoterraformmodule"
-}
+#module "storage" {
+#  source = "./s3_storage"
+#  project_name = "demoterraformmodule"
+#}
 
 #Deploy VPC
 module "vpc_demo" {
@@ -20,16 +20,16 @@ module "vpc_demo" {
 }
 
 #deploy SG
-module "sg_aws" {
-  source = "./sg_aws"
-  vpc_id = "${module.vpc_demo.vpc_id}"
-}
+#module "sg_aws" {
+#  source = "./sg_aws"
+#  vpc_id = "${module.vpc_demo.vpc_id}"
+#}
 
 #deploy EC2
 
-module "ec2_demo" {
-  source = "./EC2"
-  security_groups = "${module.sg_aws.name}"
-}
+#module "ec2_demo" {
+ # source = "./EC2"
+ # security_groups = "${module.sg_aws.name}"
+#}
 
 ~
