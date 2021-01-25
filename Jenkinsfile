@@ -2,12 +2,12 @@
     tools { terraform 'Terraform-12' }
     try{
         stage('Git Checkout'){
-            steps{
+            node{
                 checkout scm
             }
 			}
         stage('Terraform Init'){   
-            steps{
+            node{
            withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
 		   accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
 		   credentialsId: 'AWS_Creadentials_Anuj', 
@@ -16,7 +16,7 @@
                  }
 			}
         stage('Terraform Plan'){
-            steps{
+            node{
            withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
 		   accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
 		   credentialsId: 'AWS_Creadentials_Anuj', 
@@ -25,7 +25,7 @@
             }
 			}
         stage('Terraform Apply'){
-            steps{
+            node{
            withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
 		   accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
 		   credentialsId: 'AWS_Creadentials_Anuj', 
@@ -34,7 +34,7 @@
             }
         }
          stage('Terraform Show'){
-            steps{
+            node{
            withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
 		   accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
 		   credentialsId: 'AWS_Creadentials_Anuj', 
