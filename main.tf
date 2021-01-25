@@ -13,7 +13,7 @@ provider "aws" {
   #secret_key = "#################################"
 }
 
-## Deploy storage
+### Deploy storage
 
 #module "storage" {
 #  source = "./s3_storage"
