@@ -1,9 +1,9 @@
-    try {
+   try{
         stage('Git Checkout'){
-            node{
-	          
-		  checkout scm
-		}
+            node{ 
+			cleanWs()
+			checkout scm
+		          }
 	                 }
         stage('Terraform Init'){   
             node{
@@ -41,4 +41,21 @@
                 {sh 'terraform show'}
             }
         }
+		currentBuild.result= 'SUCCESS'
     }
+   catch (org.jenkinsci.plugin.workflow.steps.FlowInterruptedException flowError) 
+   {
+   currentBuild.result= 'ABORTED'
+   }
+   catch (err) 
+   {
+   currentBuild.result= 'FAILURE'
+   throw err
+   }
+   finally
+   {
+   if(currentBuild.result= 'SUCCESS')
+   {
+   currentBuild.result= 'SUCCESS'
+   }
+   }
