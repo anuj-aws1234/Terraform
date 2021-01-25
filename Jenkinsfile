@@ -1,9 +1,10 @@
     try{
         stage('Git Checkout'){
             node{
-                checkout scm
-            }
-			}
+	          cleanWs()
+		  checkout scm
+		}
+	                 }
         stage('Terraform Init'){   
             node{
            withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
