@@ -54,7 +54,7 @@
    }
    finally
    {
-   if(currentBuild.result= 'SUCCESS')
+   if(currentBuild.result== 'SUCCESS')
    {
    currentBuild.result= 'SUCCESS'
    }
