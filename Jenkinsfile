@@ -43,10 +43,7 @@
         }
 		currentBuild.result= 'SUCCESS'
     }
-   catch (org.jenkinsci.plugin.workflow.steps.FlowInterruptedException flowError) 
-   {
-   currentBuild.result= 'ABORTED'
-   }
+   
    catch (err) 
    {
    currentBuild.result= 'FAILURE'
