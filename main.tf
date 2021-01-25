@@ -28,14 +28,14 @@ provider "aws" {
  # public_cidr  = "192.168.2.0/24"
 #}
 
-#resource "aws_vpc" "first_vpc" {
-#  cidr_block       = "10.0.0.0/16"
-#  instance_tenancy = "default"
+resource "aws_vpc" "first_vpc" {
+  cidr_block       = "10.0.0.0/16"
+  instance_tenancy = "default"
 
-#  tags = {
-#    Name = "first_vpc"
-#  }
-#}
+ tags = {
+    Name = "first_vpc"
+  }
+}
 
 #deploy SG
 #module "sg_aws" {
