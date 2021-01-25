@@ -1,4 +1,4 @@
-    try{
+    try {
         stage('Git Checkout'){
             node{
 	          
