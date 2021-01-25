@@ -1,7 +1,7 @@
     try{
         stage('Git Checkout'){
             node{
-	          cleanWs()
+	          
 		  checkout scm
 		}
 	                 }
