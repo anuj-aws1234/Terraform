@@ -1,4 +1,4 @@
-   try{
+   try {
         stage('Git Checkout'){
             node{ 
 			cleanWs()
@@ -6,7 +6,7 @@
 		          }
 	                 }
         stage('Terraform Init'){   
-            node{
+            node {
            withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
 		   accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
 		   credentialsId: 'AWS_Creadentials_Anuj', 
@@ -15,7 +15,7 @@
                  }
 			}
         stage('Terraform Plan'){
-            node{
+            node {
            withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
 		   accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
 		   credentialsId: 'AWS_Creadentials_Anuj', 
@@ -24,7 +24,7 @@
             }
 			}
         stage('Terraform Apply'){
-            node{
+            node {
            withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
 		   accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
 		   credentialsId: 'AWS_Creadentials_Anuj', 
@@ -33,7 +33,7 @@
             }
         }
          stage('Terraform Show'){
-            node{
+            node {
            withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
 		   accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
 		   credentialsId: 'AWS_Creadentials_Anuj', 
