@@ -1,5 +1,3 @@
-    agent any
-    tools { terraform 'Terraform-12' }
     try{
         stage('Git Checkout'){
             node{
